@@ -1,0 +1,82 @@
+.body-poses {
+	margin-top: 8rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.pose {
+	max-width: 98vw;
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.pose-image {
+	flex: 0.6;
+	width: 20%;
+	display: block;
+	margin: 0 auto;
+}
+
+.pose-details {
+	flex: 1;
+	h2 {
+		font-family: $primary-font;
+		text-transform: uppercase;
+		font-size: 4rem;
+		color: $primary-color;
+	}
+	.pose-difficulty {
+		font-size: 2rem;
+		font-family: $primary-font;
+		text-align: left;
+		margin-right: 20px;
+		color: lighten($secondary-color, 60%);
+		text-transform: uppercase;
+	}
+
+	.post-benefits {
+		margin-top: 40px;
+		font-size: 1.3rem;
+		font-style: italic;
+		color: lighten($secondary-color, 10%);
+	}
+}
+
+.poses-not-found {
+	font-size: 1.3rem;
+	text-align: center;
+}
+
+@media only screen and (max-width: 700px) {
+	.pose {
+		flex-direction: column-reverse;
+		margin-top: 20px;
+	}
+	.pose-image {
+		flex: 1;
+		width: 45%;
+		display: block;
+		margin: 0 auto;
+	}
+
+	.pose-details {
+		flex: 1;
+		h2 {
+			font-size: 2rem;
+		}
+		.pose-difficulty {
+			font-size: 1.1rem;
+		}
+
+		.post-benefits {
+			font-size: 1rem;
+		}
+	}
+
+	.poses-not-found {
+		font-size: 1.2rem;
+	}
+}

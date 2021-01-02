@@ -1,0 +1,117 @@
+.opening {
+	display: flex;
+	align-items: center;
+}
+
+.intro {
+	flex: 1;
+	text-align: left;
+	h1 {
+		font-size: 6rem;
+		text-transform: uppercase;
+		font-family: $primary-font;
+		font-weight: 400;
+	}
+
+	.opening-heading-1 {
+		color: $secondary-color;
+		font-weight: 700;
+	}
+
+	.opening-heading-2 {
+		color: $primary-color;
+		font-size: 5rem;
+	}
+
+	.opening-tag-line {
+		margin-top: 40px;
+	}
+
+	p {
+		font-size: 1.1rem;
+	}
+}
+
+.sample-commands {
+	flex: 1;
+	margin-left: 30px;
+	text-align: center;
+	h3 {
+		font-size: 2rem;
+		font-family: $primary-font;
+		font-weight: 400;
+		text-transform: uppercase;
+		color: lighten($secondary-color, 10%);
+	}
+
+	p {
+		margin-top: 20px;
+		font-size: 2rem;
+		font-style: italic;
+		color: $primary-color;
+	}
+}
+
+.sample-command-box {
+	opacity: 0;
+	z-index: 0;
+	animation: fadeOut 4s ease-in infinite;
+}
+
+@media only screen and (max-width: 700px) {
+	.opening {
+		flex-direction: column;
+	}
+
+	.intro {
+		h1 {
+			font-size: 4rem;
+		}
+
+		.opening-heading-1 {
+			color: $secondary-color;
+			font-weight: 700;
+		}
+
+		.opening-heading-2 {
+			color: $primary-color;
+			font-size: 3rem;
+		}
+
+		.opening-tag-line {
+			margin-top: 40px;
+		}
+
+		p {
+			font-size: 1rem;
+			text-align: left;
+		}
+	}
+
+	.sample-commands {
+    margin-top: 50px;
+    margin-left: 0;
+		h3 {
+			font-size: 1.2rem;
+		}
+
+		p {
+			font-size: 1.3rem;
+		}
+	}
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+	}
+	75% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
