@@ -44,6 +44,12 @@ const sampleStatements = [
   "How can I cope with insomnia ?",
 ];
 
+const stopSpeech = () => {
+  window.speechSynthesis.cancel();
+};
+
+let isSpoken = false;
+
 const Microphone = () => {
   let sampleStatementsIndex = 0;
   const [poses, setPoses] = useState([]);
@@ -78,6 +84,17 @@ const Microphone = () => {
     }
   };
 
+  const noPoseSpeech = () => {
+    if (!isSpoken) {
+      let utterance = new SpeechSynthesisUtterance(
+        "No matching poses found. Please try again."
+      );
+      speechSynthesis.speak(utterance);
+    }
+
+    isSpoken = true;
+  };
+
   useEffect(() => {
     fetchPoses(defaultRequest);
     setInterval(() => {
@@ -85,6 +102,7 @@ const Microphone = () => {
       if (result !== lastLoad) {
         lastLoad = result;
         fetchPoses(qs.parse(result, { delimiter: "\n" }));
+        isSpoken = false;
       }
     }, 2000);
 
@@ -125,6 +143,7 @@ const Microphone = () => {
               ))
             ) : (
               <p className="poses-not-found">
+                {noPoseSpeech()}
                 No Poses Found. <br /> Please Try Again 😢
               </p>
             ))}
