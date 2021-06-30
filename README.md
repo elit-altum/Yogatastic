@@ -37,3 +37,8 @@ C. Running the frontend from the client directory
 cd client/
 yarn start
 ```
+
+## Architecture
+<p align="center">
+  <img align="center" src="client/public/flow.png?raw=true">
+</p>
